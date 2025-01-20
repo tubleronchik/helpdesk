@@ -72,6 +72,12 @@ class HelpdeskTicket(models.Model):
     )
     partner_name = fields.Char()
     partner_email = fields.Char(string="Email")
+    
+    phone = fields.Char(string="Phone")                                                    
+    source = fields.Char(string="Problem Source")                                          
+    count = fields.Integer(string="Problem count")                                         
+    last_occurred = fields.Datetime(default=fields.Datetime.now) 
+    
     last_stage_update = fields.Datetime(default=fields.Datetime.now)
     assigned_date = fields.Datetime()
     closed_date = fields.Datetime()
